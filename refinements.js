@@ -7,6 +7,7 @@ const sequenceBall = document.querySelector('.sequence-ball');
 const ballSkin = document.querySelector('.ball-skin');
 const ballTrail = document.querySelector('.ball-trail');
 const passingLanes = document.querySelector('.passing-lanes');
+const mobileTactics = matchMedia('(max-width:640px)');
 let tacticalTime = 0;
 let tacticalLastFrame = 0;
 let tacticalFrame = 0;
@@ -54,7 +55,7 @@ function renderTactics(time) {
   tacticsScene.dataset.playPhase = passing ? 'pass' : 'control';
 }
 function tacticalTick(now) {
-  if (tacticalLastFrame) tacticalTime = (tacticalTime + Math.min(now - tacticalLastFrame,50)) % 18000;
+  if (tacticalLastFrame) tacticalTime = (tacticalTime + Math.min(now - tacticalLastFrame,50) * (mobileTactics.matches ? 1.3 : 1)) % 18000;
   tacticalLastFrame = now;
   if (now - tacticalLastRender >= 32) {
     renderTactics(tacticalTime);
