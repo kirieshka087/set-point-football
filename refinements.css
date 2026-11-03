@@ -1,0 +1,124 @@
+/* Small, deliberate refinements to the established graphite / red / cobalt scene. */
+:root { --corner:5px; --edge-light:#b6c8d05c; --edge-dark:#3d46532e; }
+.nav-panel { border-radius:6px; }
+.button,.header-cta,.hero-price-card,.hero-coach-card,.football-feature,.tactics-card,.booking-form,.tariff,.program-card { border-radius:var(--corner); }
+.grid-tile,.price-switch,.price-switch button,.replay-pass,.menu-toggle,.booking-choices label>span,.booking-form input:not([type=radio]),.booking-form select { border-radius:4px; }
+.hero-cta { background:linear-gradient(135deg,#069de9,#087ccb); box-shadow:0 0 25px #00b5ff65,0 17px 70px #008de56b,inset 0 1px #9ee9ff6b; isolation:isolate; }
+.hero-cta:before { content:''; position:absolute; z-index:-1; inset:-19px -31px; background:radial-gradient(ellipse,#139eea66,transparent 72%); filter:blur(19px); pointer-events:none; }
+.hero-cta:hover,.hero-cta:focus-visible { background:linear-gradient(135deg,#17b2f7,#0687d7); box-shadow:0 0 34px #00b5ff80,0 20px 85px #008de575,inset 0 1px #c6f4ff9c; }
+.football-hero .v2-people { mask-image:linear-gradient(180deg,#000 83%,#000b 91%,transparent 96%); }
+.light-triangle { mask-image:linear-gradient(180deg,#000 67%,#000e 83%,transparent 100%); }
+.experience-grid>.grid-tile:not(.v2-experience) { mask-image:linear-gradient(#000 20%,#000b 65%,transparent); }
+.gloves-object { top:205px; left:0; width:94%; max-width:470px; transform:rotate(-15deg); transform-origin:50% 65%; }
+.gloves-object:hover,.gloves-object:focus-visible { transform:translateY(-10px) rotate(-11deg); }
+@keyframes glove-toss { 0%,100%{transform:rotate(-15deg)}42%{transform:translate(5px,-24px) rotate(-9deg)}75%{transform:translate(0,-5px) rotate(-17deg)} }
+.program-adults .equipment-window { transform:scaleX(-1); }
+.program-card { border-image:none; border:1px solid #788b9b45; background:radial-gradient(ellipse at 4% 0%,#8896a226,transparent 70%),linear-gradient(140deg,#2b3239,#19212a); box-shadow:15px 23px 44px #0003,inset 1px 1px #d4e9f00c; transition:transform .65s cubic-bezier(.2,.65,.2,1),box-shadow .65s,border-color .65s,opacity .65s; }
+.program-card>p { color:#b9c2cc; }
+.program-card .equipment-window img { filter:drop-shadow(12px 21px 14px #0009); }
+.program-top { color:#a7b7c5; }
+.program-bottom { color:#a4b3c0; }
+.program-bottom a { width:42px; height:42px; background:#121d2740; border-color:#7f96a45c; }
+.program-card:focus-within { border-color:#91b4cb88; box-shadow:17px 27px 48px #0004,inset 1px 1px #d4e9f015; }
+.program-card:focus-within .equipment-window img { transform:translateY(-7px) rotate(-2deg); }
+.tactics-card { background:radial-gradient(ellipse at 3% 0%,#a0b1c024,transparent 64%),linear-gradient(140deg,#303b43,#19222c); border-color:#8194a44a; box-shadow:18px 28px 48px #0004,inset 1px 1px #d4e9f012; }
+.tactics-card:before { opacity:.55; }
+.tactics-field { position:relative; }
+.team-player { filter:drop-shadow(3px 5px 3px #0007); }
+.player-token { fill:url(#tokenRed); stroke:#ffd8dc; stroke-opacity:.35; stroke-width:1; }
+.team-player text { fill:#fff1f3; text-anchor:middle; font:600 10px Manrope,Arial,sans-serif; letter-spacing:-.025em; }
+.possession-ring { fill:none; stroke:#f47b90; stroke-width:1; opacity:0; }
+.sequence-ball { pointer-events:none; }
+.tactics-toggle { display:flex; align-items:center; justify-content:center; gap:10px; min-width:133px; min-height:44px; padding:11px 14px; background:#17232e80; color:#d3e4ed; transition:background .3s,border-color .3s; }
+.tactics-toggle:hover,.tactics-toggle:focus-visible { border-color:#70b0cf; background:#273f4e; }
+.tactics-toggle svg { width:15px; height:15px; stroke:#8bd3f4; stroke-width:2; fill:none; }
+.tactics-toggle span { margin:0; color:inherit; font-size:13px; }
+.tactics-toggle .play-glyph { display:none; }
+.tactics-toggle[aria-pressed=false] .pause-glyph { display:none; }
+.tactics-toggle[aria-pressed=false] .play-glyph { display:block; }
+.tactics-toggle:disabled { cursor:default; opacity:.75; }
+.tactics-toggle:disabled svg { display:none; }
+.coach-quote { color:#e3e8ec; }
+.coach-signature>span { color:#a1aebc; }
+.coach-description { color:#b1bdc9; }
+.match-details>div { padding-top:19px; position:relative; }
+.match-details>div:before { content:''; position:absolute; left:0; top:0; height:1px; width:64px; background:linear-gradient(90deg,#70b6db88,transparent); transition:width .6s; }
+.match-details>div:hover:before { width:85%; }
+.tariff { background:radial-gradient(ellipse at 1% 0%,#869aa21e,transparent 65%),linear-gradient(140deg,#293139,#19212a); box-shadow:13px 21px 40px #0003,inset 1px 1px #d4e9f00b; transition:transform .6s,border-color .6s,box-shadow .6s; }
+.tariff-featured { background:radial-gradient(ellipse at 0 0,#0d8abb3b,transparent 70%),linear-gradient(140deg,#2d3c47,#19232e); }
+.tariff-description { color:#b2bfcb; }
+.tariff h3 { color:#edf1f4; }
+.tariff-tag { background:linear-gradient(135deg,#39b3e0,#158bc3); color:#071d29; border-radius:4px; box-shadow:3px 5px 12px #0003; }
+.price-grid.is-changing .tariff-price { animation:price-settle .7s ease; }
+@keyframes price-settle { 0%,100%{filter:none;transform:none}35%{filter:drop-shadow(0 0 12px #59b9e74d);transform:translateY(-3px)} }
+.faq-kit { display:block; width:100%; max-width:570px; margin:35px 0 0 -12px; padding:0; border:0; background:none; transform:rotate(-4deg); filter:drop-shadow(19px 25px 17px #0008); transition:transform .7s cubic-bezier(.2,.65,.2,1),filter .7s; }
+.faq-kit img { width:100%; height:auto; }
+.faq-kit:hover,.faq-kit:focus-visible { transform:translateY(-7px) rotate(-2deg); filter:drop-shadow(23px 32px 23px #0008); }
+.faq-kit.is-lifted { animation:kit-lift 1.05s cubic-bezier(.2,.65,.2,1); }
+@keyframes kit-lift { 0%,100%{transform:rotate(-4deg)}40%{transform:translate(3px,-16px) rotate(-1deg)}72%{transform:translateY(-4px) rotate(-5deg)} }
+.faq-item { position:relative; border-color:#768d9b3e; border-radius:4px; transition:background .4s,border-color .4s; }
+.faq-item:first-child { border-color:#768d9b3e; }
+.faq-item:has([aria-expanded=true]) { border-color:#638eaa68; background:linear-gradient(90deg,#5f92b00b,transparent); }
+.faq-item h3>button { transition:color .3s; }
+.faq-item h3>button:hover,.faq-item h3>button:focus-visible { color:#91d4f1; }
+.faq-item h3>button>span { width:26px; height:26px; border-color:#7694ad79; }
+.faq-item h3>button>span:before,.faq-item h3>button>span:after { left:7px; top:11px; width:10px; }
+.faq-answer p { color:#b5c0cb; }
+.booking-form { background:radial-gradient(ellipse at 0 0,#7895a326,transparent 67%),linear-gradient(135deg,#2c3842,#1a242e); box-shadow:18px 28px 48px #0003,inset 1px 1px #d4e9f013; transition:border-color .4s,box-shadow .4s; }
+.booking-form:focus-within { border-color:#6ca3c276; box-shadow:18px 28px 48px #0004,inset 1px 1px #d4e9f01a; }
+.booking-choices label>span { transition:color .3s,background .3s,border-color .3s,box-shadow .3s; }
+.booking-choices label:hover>span { background:#3550605c; border-color:#7799ae88; color:#ecf4f8; }
+.booking-choices input:checked+span { background:linear-gradient(135deg,#425d71,#34485b); box-shadow:inset 0 1px #cde8f21a,0 3px 8px #0002; }
+.booking-form input:not([type=radio]),.booking-form select { transition:background .3s,border-color .3s; }
+.booking-form input:not([type=radio]):focus,.booking-form select:focus { background:#1b2a36; border-color:#74b5d2; }
+.button:active,.header-cta:active { transform:translateY(1px); }
+.footer-wordmark { background:linear-gradient(135deg,#fff 7%,#dce5eb 42%,#7f8c9b); background-clip:text; color:transparent; text-shadow:4px 6px #1c293666; }
+.footer-wordmark>span { color:#ff3553; }
+.text-link { text-underline-offset:7px; }
+.text-link:hover,.text-link:focus-visible { text-decoration:underline; text-decoration-thickness:1px; }
+@media(hover:hover) and (pointer:fine) {
+ .has-reveal .program-card.is-visible:hover,.program-card:hover,.tariff:hover { transform:perspective(1000px) translateY(-5px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg)); border-color:#91aabd72; box-shadow:18px 29px 48px #0005,inset 1px 1px #d4e9f016; }
+ .program-card:has(.program-bottom a:hover) .equipment-window img { transform:translateY(-12px) rotate(-3deg); }
+ .tariff:has(.button:hover) { border-color:#6bbde79c; }
+}
+@media(max-width:1500px) {
+ .gloves-object { top:195px; left:0; width:95%; }
+ .faq-kit { max-width:500px; margin-left:-8px; }
+}
+@media(max-width:980px) {
+ .gloves-object { top:255px; width:120%; left:-5px; }
+ .tactics-caption { align-items:center; gap:15px; }
+ .tactics-toggle { min-width:122px; }
+ .faq-kit { margin-top:32px; }
+}
+@media(max-width:640px) {
+ .football-hero .v2-mobile-people .mobile-boy,.football-hero .v2-mobile-people .mobile-coach { mask-image:linear-gradient(180deg,#000 80%,transparent 100%); }
+ .light-triangle { mask-image:linear-gradient(180deg,#000 65%,transparent 100%); }
+ .hero-cta { box-shadow:0 0 23px #00b5ff60,0 13px 45px #008de566,inset 0 1px #9ee9ff6b; }
+ .hero-cta:before { inset:-14px -7px; }
+ .gloves-object { top:-12px; left:auto; right:-2px; width:133px; max-width:none; transform:rotate(-15deg); }
+ .gloves-object:hover,.gloves-object:focus-visible { transform:translateY(-5px) rotate(-11deg); }
+ .feature-copy h3 { font-size:29px; }
+ .tactics-card { padding:25px 20px; }
+ .tactics-field { margin:24px 0; }
+ .tactics-caption>span { font-size:12px; }
+ .tactics-toggle { min-width:118px; min-height:44px; padding:10px; }
+ .tactics-toggle span { font-size:12px; }
+ .faq-kit { max-width:340px; width:96%; margin:24px auto 8px; }
+ .faq-list { margin-top:28px; }
+ .faq-item h3>button { font-size:18px; }
+ .booking-form legend,.form-label { font-size:13px; }
+ .booking-choices label>span { font-size:13px; }
+ .program-bottom { font-size:12px; }
+ .footer-wordmark { padding-bottom:45px; }
+}
+.effects-off .gloves-object { transform:rotate(-15deg)!important; }
+.effects-off .program-card,.effects-off .tariff,.effects-off .faq-kit,.effects-off .equipment-window img,.effects-off .price-grid.is-changing .tariff-price { animation:none!important; transform:none!important; }
+.effects-off .program-adults .equipment-window { transform:scaleX(-1)!important; }
+.effects-off .faq-kit { transform:rotate(-4deg)!important; }
+@media(prefers-reduced-motion:reduce) {
+ .program-card:hover,.tariff:hover,.has-reveal .program-card.is-visible:hover,.faq-kit,.faq-kit:hover,.faq-kit:focus-visible,.price-grid.is-changing .tariff-price { transform:none!important; animation:none!important; }
+ .gloves-object,.gloves-object:hover { transform:rotate(-15deg)!important; }
+ .program-adults .equipment-window { transform:scaleX(-1)!important; }
+ .program-card .equipment-window img,.program-card:focus-within .equipment-window img { transform:none!important; }
+}
